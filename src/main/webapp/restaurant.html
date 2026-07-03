@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Delivery App</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f8f8f8;
+}
+
+/* Navbar */
+
+nav{
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 80px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    color:#fc8019;
+    font-size:32px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#333;
+    font-size:18px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#fc8019;
+}
+
+/* Hero Section */
+
+.hero{
+    height:500px;
+    background:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600')
+    center/cover no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-content{
+    text-align:center;
+    color:white;
+    background:rgba(0,0,0,0.5);
+    padding:40px;
+    border-radius:15px;
+}
+
+.hero-content h1{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+.search-box{
+    width:500px;
+    max-width:90%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+}
+
+/* Restaurant Section */
+
+.restaurant-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    padding:20px 80px 80px;
+}
+
+.restaurant-link{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    transition:0.4s;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+.card-content h2{
+    color:#222;
+    margin-bottom:10px;
+    min-height:55px;
+}
+
+.card-content p{
+    color:#555;
+    margin-bottom:10px;
+    line-height:1.5;
+}
+
+.tag{
+    display:inline-block;
+    background:#fff3e8;
+    color:#fc8019;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:500;
+    margin-bottom:12px;
+}
+
+.rating{
+    color:green;
+    font-weight:bold;
+}
+
+.delivery{
+    color:#fc8019;
+    font-weight:bold;
+}
+
+.status{
+    font-weight:bold;
+}
+
+.open{
+    color:green;
+}
+
+.closed{
+    color:red;
+}
+
+/* Footer */
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+@media(max-width:768px){
+
+nav{
+    flex-direction:column;
+    gap:15px;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:35px;
+}
+
+.restaurant-container{
+    padding:20px;
+}
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- Navbar -->
+
+<nav>
+
+<div class="logo">FoodHub</div>
+
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">Login</a>
+<a href="#">Sign Up</a>
+<a href="#">Profile</a>
+</div>
+
+</nav>
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Order Food Online</h1>
+
+<p>Discover the best restaurants near you</p>
+
+<input type="text"
+class="search-box"
+placeholder="Search for restaurants, cuisines...">
+
+</div>
+
+</section>
+
+<!-- Restaurant List -->
+
+<h1 class="section-title">Popular Restaurants</h1>
+
+<div class="restaurant-container">
+
+<!-- Restaurant 1 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800">
+
+<div class="card-content">
+<h2>Pizza Palace</h2>
+<p><b>Cuisine:</b> Italian</p>
+<p class="delivery">25 mins</p>
+<p><b>Address:</b>MG Road, Bangalore</p>
+<p class="rating">⭐ Rating:4.8</p>
+<p class="status">Active</p>
+</div>
+</div>
+
+<!-- Restaurant 2 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800">
+
+<div class="card-content">
+<h2>Spice Garden</h2>
+<p><b>Cuisine:</b> North Indian</p>
+<p class="delivery">Delivery Time: 30 mins</p>
+<p><b>Address:</b> Whitefield, Bangalore</p>
+<p class="rating">⭐ Rating: 4.5</p>
+<p class="status">Active</p>
+</div>
+</div>
+
+<!-- Restaurant 3 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800">
+
+<div class="card-content">
+<h2>Burger Town</h2>
+<p><b>Cuisine:</b> Fast Food</p>
+<p class="delivery">Delivery Time: 20 mins</p>
+<p><b>Address:</b> Electronic City, Bangalore</p>
+<p class="rating">⭐ Rating: 4.7</p>
+<p class="status">Active</p>
+</div>
+</div>
+
+<!-- Restaurant 4 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800">
+
+<div class="card-content">
+<h2>Andhra Kitchen</h2>
+<p><b>Cuisine:</b> South Indian</p>
+<p class="delivery">Delivery Time: 35 mins</p>
+<p><b>Address:</b> Marathahalli, Bangalore</p>
+<p class="rating">⭐ Rating: 4.6</p>
+<p class="status">Active</p>
+</div>
+</div>
+
+<!-- Restaurant 5 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800">
+
+<div class="card-content">
+<h2>Chinese Express</h2>
+<p><b>Cuisine:</b> Chinese</p>
+<p class="delivery">Delivery Time: 28 mins</p>
+<p><b>Address:</b> Koramangala, Bangalore</p>
+<p class="rating">⭐ Rating: 4.4</p>
+<p class="status">Active</p>
+</div>
+</div>
+
+<!-- Restaurant 6 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=800&q=80" alt="Paradise Biryani">
+
+<div class="card-content">
+<h2>Paradise Biryani</h2>
+<p><b>Cuisine:</b> Biryani, North Indian</p>
+<p class="delivery">Delivery Time: 30 mins</p>
+<p><b>Address:</b> Hyderabad</p>
+<p class="rating">⭐ Rating: 4.5</p>
+<p class="status">Active</p>
+</div>
+</div>
+
+<!-- Restaurant 7 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800">
+
+<div class="card-content">
+<h2>Pizza Hut</h2>
+<p><b>Cuisine:</b> Pizza, Italian</p>
+<p class="delivery">Delivery Time: 25 mins</p>
+<p><b>Address:</b> Bangalore</p>
+<p class="rating">⭐ Rating: 4.3</p>
+<p class="status">Active</p>
+</div>
+</div>
+
+<!-- Restaurant 8 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800">
+
+<div class="card-content">
+<h2>Burger King</h2>
+<p><b>Cuisine:</b> Burgers, Fast Food</p>
+<p class="delivery">Delivery Time: 20 mins</p>
+<p><b>Address:</b> Chennai</p>
+<p class="rating">⭐ Rating: 4.2</p>
+<p class="status">Active</p>
+</div>
+</div>
+
+<!-- Restaurant 9 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800">
+
+<div class="card-content">
+<h2>Andhra Kitchen</h2>
+<p><b>Cuisine:</b> South Indian</p>
+<p class="delivery">Delivery Time: 35 mins</p>
+<p><b>Address:</b> Marathahalli, Bangalore</p>
+<p class="rating">⭐ Rating: 4.6</p>
+<p class="status">Active</p>
+</div>
+</div>
+
+<!-- Restaurant 10 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800">
+
+<div class="card-content">
+<h2>Chinese Express</h2>
+<p><b>Cuisine:</b> Chinese</p>
+<p class="delivery">Delivery Time: 28 mins</p>
+<p><b>Address:</b> Koramangala, Bangalore</p>
+<p class="rating">⭐ Rating: 4.4</p>
+<p class="status">Active</p>
+</div>
+</div>
+
+<!-- Restaurant 11 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?w=800">
+
+<div class="card-content">
+<h2>KFC</h2>
+<p><b>Cuisine:</b> Fried Chicken</p>
+<p class="delivery">Delivery Time: 22 mins</p>
+<p><b>Address:</b> Hyderabad</p>
+<p class="rating">⭐ Rating: 4.3</p>
+<p class="status">Active</p>
+</div>
+</div>
+
+<!-- Restaurant 12 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=800">
+
+<div class="card-content">
+<h2>Subway</h2>
+<p><b>Cuisine:</b> Sandwiches</p>
+<p class="delivery">Delivery Time: 18 mins</p>
+<p><b>Address:</b> Bangalore</p>
+<p class="rating">⭐ Rating: 4.1</p>
+<p class="status">Active</p>
+</div>
+</div>
+
+<!-- Restaurant 13 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=800">
+
+<div class="card-content">
+<h2>Meghana Foods</h2>
+<p><b>Cuisine:</b> Biryani</p>
+<p class="delivery">Delivery Time: 27 mins</p>
+<p><b>Address:</b> Bangalore</p>
+<p class="rating">⭐ Rating: 4.7</p>
+<p class="status">Active</p>
+</div>
+</div>
+
+<!-- Restaurant 14 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1555992336-03a23c7b20ee?w=800">
+
+<div class="card-content">
+<h2>Empire Restaurant</h2>
+<p><b>Cuisine:</b> Multi Cuisine</p>
+<p class="delivery">Delivery Time: 24 mins</p>
+<p><b>Address:</b> Bangalore</p>
+<p class="rating">⭐ Rating: 4.4</p>
+<p class="status">Active</p>
+</div>
+</div>
+
+<!-- Restaurant 15 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800">
+
+<div class="card-content">
+<h2>Chutneys</h2>
+<p><b>Cuisine:</b> South Indian</p>
+<p class="delivery">Delivery Time: 30 mins</p>
+<p><b>Address:</b> Hyderabad</p>
+<p class="rating">⭐ Rating: 4.5</p>
+<p class="status">Active</p>
+</div>
+</div>
+
+<!-- Restaurant 16 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800">
+
+<div class="card-content">
+<h2>Barbeque Nation</h2>
+<p><b>Cuisine:</b> BBQ, Grill</p>
+<p class="delivery">Delivery Time: 40 mins</p>
+<p><b>Address:</b> Hyderabad</p>
+<p class="rating">⭐ Rating: 4.8</p>
+<p class="status">Active</p>
+</div>
+</div>
+
+<!-- Restaurant 17 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=800">
+
+<div class="card-content">
+<h2>A2B Restaurant</h2>
+<p><b>Cuisine:</b> Vegetarian</p>
+<p class="delivery">Delivery Time: 25 mins</p>
+<p><b>Address:</b> Chennai</p>
+<p class="rating">⭐ Rating: 4.4</p>
+<p class="status">Active</p>
+</div>
+</div>
+
+<!-- Restaurant 18 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=800">
+
+<div class="card-content">
+<h2>Pista House</h2>
+<p><b>Cuisine:</b> Biryani</p>
+<p class="delivery">Delivery Time: 32 mins</p>
+<p><b>Address:</b> Hyderabad</p>
+<p class="rating">⭐ Rating: 4.5</p>
+<p class="status">Active</p>
+</div>
+</div>
+<!-- Restaurant 19 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=800">
+
+<div class="card-content">
+<h2>Taco Bell</h2>
+<p><b>Cuisine:</b> Mexican</p>
+<p class="delivery">Delivery Time: 22 mins</p>
+<p><b>Address:</b> Mumbai</p>
+<p class="rating">⭐ Rating: 4.1</p>
+<p class="status">Active</p>
+</div>
+</div>
+
+<!-- Restaurant 20 -->
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=800">
+
+<div class="card-content">
+<h2>Wow Momo</h2>
+<p><b>Cuisine:</b> Momos, Snacks</p>
+<p class="delivery">Delivery Time: 20 mins</p>
+<p><b>Address:</b> Bangalore</p>
+<p class="rating">⭐ Rating: 4.2</p>
+<p class="status">Active</p>
+</div>
+</div>
+
+</div>
+
+<!-- Footer -->
+
+<footer>
+<h3>FoodHub © 2026 | Fast Delivery, Fresh Food</h3>
+</footer>
+
+</body>
+</html>

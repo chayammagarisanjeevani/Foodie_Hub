@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Restaurant Menu</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f8f8f8;
+}
+
+/* Navbar */
+nav{
+    background:white;
+    padding:15px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    position:sticky;
+    top:0;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#fc8019;
+}
+
+.back-btn{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+}
+
+/* Restaurant Header */
+.header{
+    text-align:center;
+    padding:40px 20px;
+    background:white;
+    margin-bottom:20px;
+}
+
+.header h1{
+    font-size:40px;
+    color:#222;
+}
+
+.header p{
+    color:#666;
+    margin-top:10px;
+}
+
+/* Menu Container */
+.menu-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    padding:20px 60px 60px;
+}
+
+/* Menu Card */
+.menu-card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.menu-card:hover{
+    transform:translateY(-8px);
+}
+
+.menu-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.menu-content{
+    padding:15px;
+}
+
+.menu-content h2{
+    font-size:20px;
+    color:#222;
+    margin-bottom:8px;
+}
+
+.menu-content p{
+    color:#555;
+    font-size:14px;
+    margin-bottom:6px;
+}
+
+.price{
+    color:#fc8019;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.rating{
+    color:green;
+    font-weight:bold;
+}
+
+/* Button */
+.btn{
+    width:100%;
+    padding:10px;
+    border:none;
+    background:#fc8019;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:10px;
+    font-size:15px;
+}
+
+.btn:hover{
+    background:#e96d00;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#111;
+    color:white;
+    margin-top:30px;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+    <div class="logo">FoodApp</div>
+    <a class="back-btn" href="restaurants.jsp">← Back to Restaurants</a>
+</nav>
+
+<!-- Restaurant Info -->
+<div class="header">
+    <h1>Pizza Hut</h1>
+    <p>Italian • Fast Food • Best Pizza in Town</p>
+</div>
+
+<!-- Menu Items -->
+<div class="menu-container">
+
+    <!-- Item 1 -->
+    <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1601924582970-9238bcb495d4?w=800">
+        <div class="menu-content">
+            <h2>Margherita Pizza</h2>
+            <p>Classic cheese pizza with fresh basil</p>
+            <p class="price">₹299</p>
+            <p class="rating">Rating: 4.5 ⭐</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1548365328-9f547fb095d0?w=800">
+        <div class="menu-content">
+            <h2>Farmhouse Pizza</h2>
+            <p>Loaded with veggies and cheese</p>
+            <p class="price">₹349</p>
+            <p class="rating">Rating: 4.3 ⭐</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800">
+        <div class="menu-content">
+            <h2>Cheese Burger</h2>
+            <p>Juicy burger with double cheese</p>
+            <p class="price">₹199</p>
+            <p class="rating">Rating: 4.2 ⭐</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Item 4 -->
+    <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=800">
+        <div class="menu-content">
+            <h2>French Fries</h2>
+            <p>Crispy golden fries with salt</p>
+            <p class="price">₹99</p>
+            <p class="rating">Rating: 4.0 ⭐</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    <h3>FoodHub © 2026 | Fresh Food, Fast Delivery</h3>
+</footer>
+
+</body>
+</html>

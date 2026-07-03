@@ -1,0 +1,442 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoodieHub - Home</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fff;
+}
+
+/* NAVBAR */
+
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    background:rgba(0,0,0,0.2);
+    backdrop-filter:blur(8px);
+}
+
+.logo{
+    color:white;
+    font-size:34px;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    gap:35px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=2200");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+}
+
+.hero video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+    position:relative;
+    color:white;
+    z-index:2;
+}
+
+.hero-content h1{
+    font-size:70px;
+    font-weight:800;
+    line-height:1.2;
+}
+
+.hero-content span{
+    color:#ff4d4d;
+}
+
+.hero-content p{
+    margin-top:20px;
+    font-size:22px;
+    color:#eee;
+}
+
+.scroll-btn{
+    position:absolute;
+    bottom:40px;
+    left:50%;
+    transform:translateX(-50%);
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    border:2px solid white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:28px;
+    text-decoration:none;
+    animation:bounce 1.5s infinite;
+    z-index:5;
+}
+
+@keyframes bounce{
+    50%{
+        transform:translateX(-50%) translateY(10px);
+    }
+}
+
+/* WHY CHOOSE US */
+
+.section{
+    padding:90px 8%;
+}
+
+.title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:60px;
+    color:#222;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.feature-card{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 25px rgba(0,0,0,0.08);
+    transition:.3s;
+}
+
+.feature-card:hover{
+    transform:translateY(-8px);
+}
+
+.feature-card h3{
+    margin-bottom:15px;
+    color:#ff4d4d;
+}
+
+/* OFFERS */
+
+.offer-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.offer{
+    background:linear-gradient(135deg,#ff4d4d,#ff7a59);
+    color:white;
+    padding:35px;
+    border-radius:20px;
+}
+
+.offer h2{
+    font-size:35px;
+}
+
+/* ABOUT */
+
+.about{
+    background:#fafafa;
+    text-align:center;
+}
+
+.about-content{
+    max-width:900px;
+    margin:auto;
+}
+
+.about-content h2{
+    font-size:55px;
+    color:#ef4f5f;
+    margin-bottom:30px;
+}
+
+.about-content p{
+    font-size:22px;
+    line-height:1.8;
+    color:#555;
+}
+
+/* FOOTER */
+
+.footer{
+    background:#111827;
+    color:white;
+    padding:60px 8%;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.footer h3{
+    margin-bottom:20px;
+}
+
+.footer ul{
+    list-style:none;
+}
+
+.footer ul li{
+    margin-bottom:10px;
+}
+
+.footer ul li a{
+    color:#ccc;
+    text-decoration:none;
+}
+
+.bottom{
+    text-align:center;
+    margin-top:40px;
+    border-top:1px solid #333;
+    padding-top:20px;
+    color:#aaa;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-content h1{
+    font-size:45px;
+}
+
+.title{
+    font-size:32px;
+}
+
+.about-content h2{
+    font-size:40px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+    <div class="logo">FoodieHub</div>
+
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#why">Why Us</a>
+        <a href="#offers">Offers</a>
+        <a href="#about">About</a>
+        <a href="login.jsp" class="login-btn" >Login</a>
+        <a href="signup.jsp" class="signup-btn" >SignUp</a>
+        
+    </div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<video autoplay muted loop>
+<source src="food-video.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+<h1>
+Delicious Food <br>
+<span>Delivered Fast</span>
+</h1>
+
+<p>
+Order from the best restaurants near you with quick delivery and irresistible flavors.
+</p>
+
+<a href="#why" class="scroll-btn">
+↓
+</a>
+
+</section>
+
+<!-- WHY US -->
+
+<section id="why" class="section">
+
+<h2 class="title">Why Choose Us</h2>
+
+<div class="features">
+
+<div class="feature-card">
+<h3>⚡ Fast Delivery</h3>
+<p>Food delivered to your doorstep in minutes.</p>
+</div>
+
+<div class="feature-card">
+<h3>🍽 Premium Restaurants</h3>
+<p>Partnered with top restaurants near you.</p>
+</div>
+
+<div class="feature-card">
+<h3>💳 Secure Payments</h3>
+<p>UPI, Cards and Wallet payments.</p>
+</div>
+
+<div class="feature-card">
+<h3>🎧 24/7 Support</h3>
+<p>Dedicated customer support anytime.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- OFFERS -->
+
+<section id="offers" class="section">
+
+<h2 class="title">Top Offers For You</h2>
+
+<div class="offer-container">
+
+<div class="offer">
+<h2>50% OFF</h2>
+<p>On Your First Order</p>
+</div>
+
+<div class="offer">
+<h2>FREE DELIVERY</h2>
+<p>On Orders Above ₹199</p>
+</div>
+
+<div class="offer">
+<h2>COMBO DEALS</h2>
+<p>Save More On Family Meals</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="section about">
+
+<div class="about-content">
+
+<h2>Better Food For More People</h2>
+
+<p>
+For over a decade, we've enabled our customers
+to discover new tastes, delivered right to their doorstep.
+We connect food lovers with the best restaurants,
+bringing convenience, quality and happiness together.
+</p>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="footer-grid">
+
+<div>
+<h3>FoodieHub</h3>
+<p>India's fastest growing food delivery platform.</p>
+</div>
+
+<div>
+<h3>Company</h3>
+<ul>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Careers</a></li>
+<li><a href="#">Blog</a></li>
+</ul>
+</div>
+
+<div>
+<h3>Support</h3>
+<ul>
+<li><a href="#">Help Center</a></li>
+<li><a href="#">Terms</a></li>
+<li><a href="#">Privacy Policy</a></li>
+</ul>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>support@foodiehub.com</p>
+<p>+91 9876543210</p>
+</div>
+
+</div>
+
+<div class="bottom">
+© 2026 FoodieHub. All Rights Reserved.
+</div>
+
+</footer>
+
+</body>
+</html>
